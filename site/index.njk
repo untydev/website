@@ -1,0 +1,27 @@
+---
+layout: layouts/page.njk
+title: Dariusz Sobczyk's personal website and blog.
+---
+<div class="max-w-3xl mx-auto">
+
+  <!-- Intro -->
+
+  <main class="p-8">
+    <!-- Bio -->
+
+    <div class="sm:flex items-center">
+      <div class="flex-shrink-0">
+        <img class="inline-block w-16 h-16 rounded-full" src="/images/photo.jpg" alt="">
+      </div>
+      <p class="mt-4 sm:mt-0 sm:ml-4 text-zinc-50">
+        Hi there! 👋 I'm Dariusz Sobczyk, a software engineer from Poland 🇵🇱. I spend my days hacking game engines in C++ and building web applications in JavaScript.
+      </p>
+    </div>
+  </main>
+
+  <!-- Posts -->
+
+  <div class="p-8">
+    {% include 'partials/posts.njk' %}
+  </div>
+</div>

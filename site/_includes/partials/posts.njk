@@ -1,0 +1,36 @@
+<div class="mx-auto grid gap-14 grid-cols-1">
+  {%- for post in collections.posts -%}
+    <div>
+      <!-- Meta -->
+
+      <p class="text-sm">
+        <span class="text-zinc-500">
+          {{ post.data.date | publishDate }} in
+        </span>
+        <span class="text-zinc-500">
+          {%- for tag in post.data.tags or tags -%}
+            {%- if tag != "post" -%}
+              {{ tag }}
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+        <span class="text-zinc-500">
+          · {{ post | readingTime }}
+        </span>
+      </p>
+
+
+      <!-- Title -->
+
+      <a href="{{ post.url }}" class="mt-2 block">
+        <p class="font-brand text-xl font-medium text-zinc-100">
+          {{ post.data.title }}
+        </p>
+        <p class="mt-2 text-base text-zinc-300">
+          {{ post.data.description }}
+        </p>
+      </a>
+
+    </div>
+  {%- endfor -%}
+</div>

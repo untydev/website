@@ -1,0 +1,34 @@
+---
+layout: layouts/page.njk
+---
+<article class="max-w-3xl prose prose-zinc dark:prose-invert mx-auto p-8">
+  <!-- Title -->
+
+  <h1 class="mb-0">
+    {{ title }}
+  </h1>
+
+  <!-- Meta -->
+
+  <p class="text-md mt-2">
+    <span class="text-zinc-500">
+      {{ data.date | publishDate }} in
+    </span>
+    <span class="text-zinc-500">
+      {%- for tag in data.tags or tags -%}
+        {%- if tag != "post" -%}
+          {{ tag }}
+        {%- endif -%}
+      {%- endfor -%}
+    </span>
+    <span class="text-zinc-500">
+      · {{ content | readingTime }}
+    </span>
+  </p>
+
+  <!-- Content -->
+
+  <div class="pt-8">
+    {{ content | safe }}
+  </div>
+</article>
