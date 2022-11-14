@@ -1,23 +1,24 @@
 ---
 layout: layouts/post.njk
-title: Reading time in Eleventy
+title: Estimate reading time in Eleventy
 date: 2022-11-12
 draft: false
 author: Dariusz Sobczyk
-description: How to add reading time section to your Eleventy website.
+description: How to add a reading time section to an Eleventy website.
 tags: [post,JavaScript]
 ---
 On my [current website](https://untypical.dev), I wanted to show the reading time of posts next to their titles. 
 Eleventy doesn't come with a built-in feature to achieve this. There are a few unofficial plugins that I could've used,
-but instead, I took the opportunity to learn something new, so I wrote the code myself.
+but instead, I took the opportunity to learn something new and wrote the code myself.
 
 ## Theory
 
-Reading time is an estimated time required to read a text by an average person. How's it calculated?
+Reading time is an estimated time required to read a text by an average person. You can calculate it by dividing the
+number of words in a text by the average reading speed. The average reading speed depends on many factors, including
+the reader's age, language, length of words and sentences, topic, etc.
 
-You take the number of words in a text and divide it by the average reading speed. The average reading speed depends on
-many factors, including the reader's age, language, length of words and sentences, topic, etc. I've read multiple
-studies and decided to take the numbers from [this analysis](https://www.sciencedirect.com/science/article/abs/pii/S0749596X19300786):
+Getting the number of words in a blog post was easy. Finding the average reading speed took me more effort. I've read
+multiple studies and decided to take the numbers from [this analysis](https://www.sciencedirect.com/science/article/abs/pii/S0749596X19300786):
 
 > Based on the analysis of 190 studies (18,573 participants), we estimate that the average silent reading rate for 
 > adults in English is 238 words per minute.
@@ -71,8 +72,7 @@ const estimateReadingTime = (content) => {
 module.exports = { estimateReadingTime }
 ```
 
-To use the function in your templates, you need to add a [filter](https://www.11ty.dev/docs/filters/) or [shortcode](https://www.11ty.dev/docs/shortcodes/) 
-in your Eleventy configuration file. I did it like this:
+To use the function in my templates, I needed to add a [filter](https://www.11ty.dev/docs/filters/) or [shortcode](https://www.11ty.dev/docs/shortcodes/) to my Eleventy configuration file:
 
 ```js
 /**
@@ -89,7 +89,7 @@ module.exports = (config) => {
 }
 ```
 
-Here's how you'd use the filter in a Nunjucks template to render the reading time of items in all collections:
+Here's how I'd use the filter in a Nunjucks template to render the reading time of items in all collections:
 
 {% raw %}
 ```njk
