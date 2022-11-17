@@ -1,5 +1,8 @@
+---
+header: true
+---
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="h-full dark">
 
   <head>
     <title>
@@ -23,11 +26,13 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
   </head>
 
-  <body class="bg-violet-900">
+  <body class="h-full bg-violet-900">
 
     <!-- Site header -->
 
-    {% include 'partials/header.njk' %}
+    {% if header %}
+      {% include 'partials/header.njk' %}
+    {% endif %}
 
     <!-- Main content -->
 
