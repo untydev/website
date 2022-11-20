@@ -2,7 +2,7 @@
 header: true
 ---
 <!DOCTYPE html>
-<html lang="en" class="h-full dark">
+<html lang="en" class="h-full">
 
   <head>
     <title>
@@ -24,9 +24,23 @@ header: true
     <!-- Favicon -->
 
     <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <!-- Mode switch -->
+
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+
+    <!-- Main script -->
+
+    <script defer src="/scripts/site.js"></script>
   </head>
 
-  <body class="h-full bg-violet-900">
+  <body class="h-full bg-zinc-50 dark:bg-zinc-900">
 
     <!-- Site header -->
 

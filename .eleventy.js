@@ -9,6 +9,7 @@ const { minifyHtml } = require('./utils/minify-html')
 module.exports = (config) => {
   config.addPassthroughCopy('./site/images')
   config.addPassthroughCopy('./site/fonts')
+  config.addPassthroughCopy('./site/scripts')
 
   config.addPlugin(syntaxHighlight)
 
