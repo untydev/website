@@ -4,7 +4,7 @@ title: Toggle dark mode with TailwindCSS
 date: 2022-11-24
 draft: false
 author: Dariusz Sobczyk
-description: How I built a toggle for dark mode for my website.
+description: How I built a toggle for dark mode on my website.
 tags: [post,TailwindCSS]
 ---
 
