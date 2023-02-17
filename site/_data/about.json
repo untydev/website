@@ -1,0 +1,92 @@
+{
+  "career": [
+    {
+      "role": "Senior Technology Programmer",
+      "company": "Techland",
+      "logo": "/images/logos/techland.png",
+      "time": "Sep 2017 - Present · 5 yrs 6 mos",
+      "description": "I'm responsible for crafting online experiences in Techland's games. My work revolves around integrating the engine with partners' SDKs (Steam, EOS, PSN, XBL, etc.) and leading the design and development of the team's core C++ libraries.",
+      "skills": ["C++", "Engine Development", "Game Development"]
+    },
+    {
+      "role": "Co-founder, Fullstack Developer",
+      "company": "Finibit",
+      "logo": "/images/logos/finibit.png",
+      "time": "Oct 2018 - Present · 4 yrs 5 mos",
+      "description": "Finibit is a small company I set up years ago with my friend as a side business. We're building custom web apps with JavaScript, Node.js, and React.js. Depending on the circumstances, I enjoy being a CEO, CTO, CFO, PM, or regular software developer.",
+      "skills": ["JavaScript", "Node.js", "Rect.js", "Web Development"]
+    },
+    {
+      "role": "Information Technology Lecturer",
+      "company": "WSB Wrocław",
+      "logo": "/images/logos/wsb.png",
+      "time": "Oct 2019 - Jul 2021 · 1 yr 10 mos",
+      "description": "I prepared and conducted classes on building web applications for Microsoft Azure. The curriculum was designed to teach students the basics of VMs, storage options, databases, and deployment strategies for static websites and dynamic applications.",
+      "skills": ["JavaScript", "Microsoft Azure", "Teaching"]
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "Gigaset",
+      "logo": "/images/logos/gigaset.png",
+      "time": "Jul 2016 - Aug 2017 · 1 yr 2 mos",
+      "description": "I started as a C++ programmer writing core software for DECT devices. Later, I transitioned to developing the web admin interface for those devices.",
+      "skills": ["C++", "JavaScript", "Embedded Development", "Web Development", "Linux"]
+    },
+    {
+      "role": "C++ Software Engineer",
+      "company": "Nokia Networks",
+      "logo": "/images/logos/nokia.png",
+      "time": "Mar 2013 - Jun 2016 · 3 yrs 4 mos",
+      "description": "I wrote software for base stations according to specifications. Later, I moved to an R&D team to prototype cloud solutions for the next generation of base stations.",
+      "skills": ["C++", "Embedded Development", "Linux"]
+    },
+    {
+      "role": "Games Programmer",
+      "company": "Plata Games",
+      "logo": "/images/logos/platagames.png",
+      "time": "Jun 2012 - Mar 2013 · 10 mos",
+      "description": "I was porting PC games to Nintendo DS and 3DS consoles. I led the development of a proprietary 2D game engine for Nintendo 3DS designed specifically for HOPA games. ",
+      "skills": ["C++", "Engine development", "Game Development"]
+    },
+    {
+      "role": "Games Developer",
+      "company": "PlayWay",
+      "logo": "/images/logos/playway.png",
+      "time": "Jan 2010 - Apr 2012 · 2 yrs 4 mos",
+      "description": "I developed 3 casual games for PCs. I was responsible for production, game design, gameplay programming, and leading a team of graphic and sound artists.",
+      "skills": ["C++", "Game Development", "Game Design"]
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "C++",
+      "summary": "C++ is my bread and butter. I've read many books and written all kinds of programs. I've never read the C++ standard before bed, so I'm not an expert yet. I know a thing or two and have some tricks up my sleeve."
+    },
+    {
+      "name": "Game development",
+      "summary": "I've been building game engines professionally and as a hobby since I remember. I don't know much about rendering or physics, as I'm more interested in architecture, networking, online services, file systems, and other stuff that often goes unnoticed."
+    },
+    {
+      "name": "JavaScript programming",
+      "summary": "It's my secondary programming language. I use it for web development and for building tools. Knowing a second programming language makes me more critical of C++ and allows me to approach problems differently."
+    },
+    {
+      "name": "Web development",
+      "summary": "I've been building full-stack apps for a few years now. I primarily use Node.js, React.js, and Tailwind CSS. I recently started appreciating Next.js. I'm well-versed in various concepts like server-side rendering, CSS-in-JS, bundlers, asset optimization, etc."
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Untypical",
+      "description": "The source code of my personal website.",
+      "href": "https://github.com/untydev/untypical"
+    },
+    {
+      "name": "Goodies",
+      "description": "A collection of useful tools for JavaScript",
+      "href": "https://github.com/finibit/goodies"
+    }
+  ]
+}
