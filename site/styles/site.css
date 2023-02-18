@@ -81,17 +81,9 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/*
-Name: Duotone Space
-Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
-
-Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-space-dark.css)
-Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
-*/
-
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family: "Space Mono", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   font-size: 14px;
   line-height: 1.375;
   direction: ltr;
@@ -99,33 +91,29 @@ pre[class*="language-"] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
-  background: #24242e;
-  color: #767693;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: theme('colors.zinc.500');
+  background: theme('colors.zinc.100');
+}
+
+.dark code[class*="language-"],
+.dark pre[class*="language-"] {
+  color: theme('colors.zinc.500');
+  background: theme('colors.zinc.800');
 }
 
 pre > code[class*="language-"] {
-  font-size: 1em;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #5151e6;
+  font-size: theme('fontSize.sm');
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: #5151e6;
+  background: theme('colors.zinc.400');
 }
 
 /* Code blocks */
@@ -145,37 +133,50 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #5b5b76;
+  color: theme('colors.zinc.500');
 }
 
-.token.punctuation {
-  color: #5b5b76;
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: theme('colors.zinc.500');
 }
 
-.token.namespace {
-  opacity: .7;
+.dark .token.punctuation {
+  color: theme('colors.zinc.500');
 }
 
 .token.tag,
 .token.operator,
 .token.number {
-  color: #dd672c;
+  color: theme('colors.orange.500');
 }
 
-.token.property,
-.token.function {
-  color: #767693;
-}
-
-.token.tag-id,
-.token.selector,
-.token.atrule-id {
-  color: #ebebff;
+.dark .token.tag,
+.dark .token.operator,
+.dark .token.number {
+  color: theme('colors.blue.400');
 }
 
 code.language-javascript,
 .token.attr-name {
-  color: #aaaaca;
+  color: theme('colors.zinc.600');
+}
+
+.dark code.language-javascript,
+.dark .token.attr-name {
+  color: theme('colors.zinc.400');
+}
+
+.token.property,
+.token.function {
+  color: theme('colors.zinc.500');
+}
+
+.dark .token.property,
+.dark .token.function {
+  color: theme('colors.zinc.500');
 }
 
 code.language-css,
@@ -195,12 +196,37 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #fe8c52;
+  color: theme('colors.orange.500');
+}
+
+.dark code.language-css,
+.dark code.language-scss,
+.dark .token.boolean,
+.dark .token.string,
+.dark .token.entity,
+.dark .token.url,
+.dark .language-css .token.string,
+.dark .language-scss .token.string,
+.dark .style .token.string,
+.dark .token.attr-value,
+.dark .token.keyword,
+.dark .token.control,
+.dark .token.directive,
+.dark .token.unit,
+.dark .token.statement,
+.dark .token.regex,
+.dark .token.atrule {
+  color: theme('colors.orange.400');
 }
 
 .token.placeholder,
 .token.variable {
-  color: #fe8c52;
+  color: theme('colors.orange.500');
+}
+
+.dark .token.placeholder,
+.dark .token.variable {
+  color: theme('colors.orange.400');
 }
 
 .token.deleted {
@@ -216,22 +242,12 @@ code.language-scss,
   font-style: italic;
 }
 
-.token.important,
 .token.bold {
   font-weight: bold;
 }
 
-.token.important {
-  color: #aaaaca;
-}
-
 .token.entity {
   cursor: help;
-}
-
-pre > code.highlight {
-  outline: .4em solid #7676f4;
-  outline-offset: .4em;
 }
 
 /* overrides color-values for the Line Numbers plugin
