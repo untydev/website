@@ -4,15 +4,15 @@
 
 @layer base {
   html {
-    font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Arvo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .logo {
-    font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Arvo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: bold;
   }
 }
@@ -21,40 +21,41 @@
  * Fonts
  */
 
-/*
- * Space Grotesk - Regular
- */
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/SpaceGrotesk-Regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 
 /*
- * Space Grotesk - SemiBold
+ * Arvo - Bold
  */
 @font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('fonts/SpaceGrotesk-Medium.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/*
- * Space Grotesk - Bold
- */
-@font-face {
-  font-family: 'Space Grotesk';
+  font-family: 'Arvo';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('fonts/SpaceGrotesk-Bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('fonts/Arvo-Bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+ * Lato - Regular
+ */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Lato-Regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+ * Lato - Bold
+ */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Lato-Bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /*
@@ -83,8 +84,8 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: "Space Mono", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  font-size: 14px;
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-size: theme('fontSize.sm');
   line-height: 1.375;
   direction: ltr;
   text-align: left;
@@ -97,14 +98,14 @@ pre[class*="language-"] {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: theme('colors.zinc.500');
-  background: theme('colors.zinc.100');
+  color: theme('colors.gray.500');
+  background: theme('colors.gray.100');
 }
 
 .dark code[class*="language-"],
 .dark pre[class*="language-"] {
-  color: theme('colors.zinc.500');
-  background: theme('colors.zinc.800');
+  color: theme('colors.gray.500');
+  background: theme('colors.gray.800');
 }
 
 pre > code[class*="language-"] {
@@ -113,7 +114,7 @@ pre > code[class*="language-"] {
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background: theme('colors.zinc.400');
+  background: theme('colors.gray.400');
 }
 
 /* Code blocks */
@@ -133,18 +134,18 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: theme('colors.zinc.500');
+  color: theme('colors.gray.500');
 }
 
 .dark .token.comment,
 .dark .token.prolog,
 .dark .token.doctype,
 .dark .token.cdata {
-  color: theme('colors.zinc.500');
+  color: theme('colors.gray.500');
 }
 
 .dark .token.punctuation {
-  color: theme('colors.zinc.500');
+  color: theme('colors.gray.500');
 }
 
 .token.tag,
@@ -161,22 +162,22 @@ pre[class*="language-"] {
 
 code.language-javascript,
 .token.attr-name {
-  color: theme('colors.zinc.600');
+  color: theme('colors.gray.600');
 }
 
 .dark code.language-javascript,
 .dark .token.attr-name {
-  color: theme('colors.zinc.400');
+  color: theme('colors.gray.400');
 }
 
 .token.property,
 .token.function {
-  color: theme('colors.zinc.500');
+  color: theme('colors.gray.500');
 }
 
 .dark .token.property,
 .dark .token.function {
-  color: theme('colors.zinc.500');
+  color: theme('colors.gray.500');
 }
 
 code.language-css,

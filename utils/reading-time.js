@@ -28,7 +28,7 @@ const countWords = (textContent) => {
  * Estimate reading time of the content.
  */
 const estimateReadingTime = (content) => {
-  return Math.round(countWords(stripHtml(getHtml(content))) / readingSpeed) + ' min'
+  return Math.round(countWords(stripHtml(getHtml(content))) / readingSpeed) + ' minutes read'
 }
 
 /**

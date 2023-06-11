@@ -1,27 +1,134 @@
 ---
 layout: layouts/page.njk
-title: Dariusz Sobczyk's personal website and blog.
 ---
-<div class="max-w-3xl mx-auto">
+<div class="max-w-3xl mx-auto px-8">
 
-  <!-- Intro -->
+  <!-- Main -->
+  <main class="prose sm:prose-lg prose-gray dark:prose-invert">
 
-  <main class="p-8">
-    <!-- Bio -->
+    <!-- Welcome -->
+    <h2 class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7 mr-2 sm:mr-3">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002" />
+      </svg>
+      Hi there!
+    </h2>
 
-    <div class="sm:flex items-center">
-      <div class="flex-shrink-0">
-        <img class="inline-block w-20 h-20 rounded-full" src="/images/photo.jpg" alt="">
-      </div>
-      <p class="mt-4 sm:mt-0 sm:ml-4 prose prose-zinc dark:prose-invert">
-        Hi there! 👋 I'm Dariusz Sobczyk, a software engineer from Poland 🇵🇱. I spend my days hacking game engines and building web applications. <a href="/about">About me.</a>
+    <p>
+      I'm Darek, a software developer from Poland. I spend my days hacking game engines and gluing web applications. I'm working full-time on the technology powering online gaming @ <a href="https://techland.pl">Techland</a>, and side hustling during the weekends @ <a href="https://finibit.com">Finibit</a>.
+    </p>
+
+    <p>
+      Welcome to my website 🙂
+    </p>
+
+    <!-- Writing -->
+    <section>
+      <h2 class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7 mr-2 sm:mr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+        </svg>
+        Things I wrote
+      </h2>
+
+      <p>
+        You can see all my posts <a href="/blog">here</a>. My favourites are:
       </p>
-    </div>
+
+      <ul role="list">
+        {%- for post in collections.posts -%}
+          {% if post.data.favourite -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- Coding -->
+    <section>
+      <h2 class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7 mr-2 sm:mr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+        </svg>
+        Things I built
+      </h2>
+
+      <p>
+        You can find me on <a href="https://github.com/untydev">GitHub</a>. Here are some of the things I built:
+      </p>
+
+      <ul role="list">
+        {% for item in resume.projects %}
+          <li>
+            <a href="{{ item.href }}">{{ item.name }}</a> — {{ item.description }}
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p>
+        If you're interested in my professional experience, check out my <a href="/resume">resume</a>.
+      </p>
+    </section>
+
+    <!-- Reading -->
+    <section>
+      <h2 class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7 mr-2 sm:mr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        </svg>
+        Things I read
+      </h2>
+
+      <p>
+        My all-time favourite non-fiction books are:
+      </p>
+
+      <ul role="list">
+        <li>
+          <a href="https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201">A Philosophy of Software Design</a> by John Ousterhout
+        </li>
+        <li>
+          <a href="https://www.stroustrup.com/dne.html">Design and Evolution of C++</a> by Bjarne Stroustrup
+        </li>
+        <li>
+          <a href="https://www.amazon.com/Simply-Einstein-Demystified-Richard-Wolfson/dp/0393325075">Simply Einstein: Relativity Demystified</a> by Richard Wolfson
+        </li>
+      </ul>
+
+      <p>
+        And another list of my top picks of fiction books:
+      </p>
+
+      <ul role="list">
+        <li>
+          <a href="https://andyweirauthor.com/#project-hail-mary">Project Hail Mary</a> by Andy Weir
+        </li>
+        <li>
+          <a href="https://michalgolkowski.pl/en/books/sybirpunk-en">SybirPunk</a> by Michał Gołkowski
+        </li>
+        <li>
+          <a href="https://www.goodreads.com/book/show/149621.Ice_Station_Zebra">Ice Station Zebra</a> by Alistair MacLean
+        </li>
+      </ul>
+
+      <p>
+        I also keep a list of the best things I've read on the internet. You can find it <a href="/links">here</a>.
+      </p>
+    </section>
+
+    <!-- Talking -->
+    <section>
+      <h2 class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7 mr-2 sm:mr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+        </svg>
+        How to talk with me
+      </h2>
+      <p>
+        The best way to get in touch with me is to send an email to hi [at] untypical.dev. You can also catch me on <a href="https://linkedin.com/in/dsobczyk">LinkedIn</a> and <a href="https://twitter.com/untydev">Twitter</a>. Feel free to share your thoughts about the content on my website, send job offers, or just say hello 🙂
+      </p>
+    </section>
   </main>
-
-  <!-- Posts -->
-
-  <div class="p-8">
-    {% include 'partials/posts.njk' %}
-  </div>
 </div>

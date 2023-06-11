@@ -6,6 +6,7 @@ draft: false
 author: Dariusz Sobczyk
 description: A brief summary of the main function in C++.
 tags: [post,C++]
+favourite: true
 ---
 
 In C++, `main` is a global function invoked by the implementation at the program startup. It acts as the program's 

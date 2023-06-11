@@ -6,6 +6,7 @@ draft: false
 author: Dariusz Sobczyk
 description: How I built a toggle for dark mode on my website.
 tags: [post,TailwindCSS]
+favourite: true
 ---
 
 I designed the first version of my website in dark colors. I prefer dark color themes (white text on black background) when programming or casually browsing the Internet.
