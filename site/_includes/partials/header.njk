@@ -1,67 +1,43 @@
-<header class="relative bg-gray-900 inset-x-0 top-0 z-50">
+<header class="mx-auto max-w-3xl p-6 mb-6" x-data="{ open: false, path: window.location.pathname }">
+  <nav class="flex justify-between items-center flex-wrap gap-y-6" aria-label="Global">
 
-  <!-- Gradient -->
-  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#c4b5fd] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-  </div>
+    {# Logo #}
+    <a href="/" class="flex flex-row font-bold text-zinc-900 dark:text-zinc-100 leading-none mr-4">
+      <span class="select-none">DS</span>
+      <span class="blinking-cursor"></span>
+    </a>
 
-  <div class="max-w-3xl mx-auto">
+    {# Menu #}
+    <div class="flex items-center gap-x-6 font-bold text-zinc-800 dark:text-zinc-100 leading-none">
+      <a href="/about" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/about/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">About</a>
+      <a href="/blog" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/blog/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">Blog</a>
+      <a href="/links" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/links/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">Links</a>
 
-    <!-- Logotype -->
-    <div class="px-8 py-16">
-      <a href="/">
-        <img src="/images/untypical.png" alt="">
-      </a>
-    </div>
+      {# Theme switcher #}
+      <button id="themeToggleBtn" class="relative hover:text-teal-500 ml-2" x-on:click="dark = !dark; localStorage.setItem('theme', dark ? 'dark' : 'light')">
+        <span class="absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
 
-    <!-- Navigation -->
-    <div class="px-8 pb-4 flex justify-between">
-      <div class="flex items-center space-x-8">
-
-        <!-- Blog -->
-        <a href="/blog" class="sm:text-lg text-white hover:underline">
-          Blog
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/dsobczyk/" class="sm:text-lg text-white hover:underline">
-          LinkedIn
-        </a>
-
-        <!-- Twitter -->
-        <a href="https://twitter.com/untydev" class="sm:text-lg text-white hover:underline">
-          Twitter
-        </a>
-
-        <!-- GitHub -->
-        <a href="https://www.github.com/untydev" class="sm:text-lg text-white hover:underline">
-          GitHub
-        </a>
-      </div>
-
-      <!-- Theme -->
-      <button id="themeToggleBtn" class="text-white hover:text-indigo-500 dark:hover:text-yellow-500">
-
-        <!-- Sun icon -->
-        <span class="is-dark hidden flex items-center">
-          {#<span class="sr-only">
-            Switch to light mode
-          </span>#}
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-          </svg>
-        </span>
-
-        <!-- Moon icon -->
-        <span class="is-light hidden flex items-center">
-          <span class="sr-only">
-            Switch to dark mode
+          {# Sun icon #}
+          <span class="hidden flex items-center" :class="{ hidden: !dark }">
+            <span class="sr-only">
+              Switch to light mode
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+              <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.061 1.06l1.06 1.06z" />
+            </svg>
           </span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-          </svg>
+
+          {# Moon icon #}
+          <span class="hidden flex items-center" :class="{ hidden: dark }">
+            <span class="sr-only">
+              Switch to dark mode
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+              <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z" clip-rule="evenodd" />
+            </svg>
+          </span>
         </span>
       </button>
     </div>
-  </div>
+  </nav>
 </header>

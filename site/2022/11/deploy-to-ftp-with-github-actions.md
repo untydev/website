@@ -1,13 +1,12 @@
 ---
 layout: layouts/post.njk
-title: Deploy to an FTP server from GitHub
+title: How to deploy to an FTP server with GitHub Actions
 date: 2022-11-14
 draft: false
-author: Dariusz Sobczyk
-description: How to deploy a website to an FTP server with GitHub Actions.
-tags: [post,GitHub]
+tags: [post,devops,github]
 ---
 I have a fair amount of experience deploying commercial projects to various Azure services. That's why for my hobby projects, I prefer solutions that get out of my way so I can focus on the important stuff.
+---
 
 I host my current website on a shared hosting plan in OVH. It's not shiny, but it's cheap and reliable. The primary form of deployment is to copy files over FTP. It's so easy that I could do it manually forever. However, I like the idea of automating repeated tasks, so I configured a GitHub Action that automatically deploys my website over FTP whenever I push the code to the repository.
 

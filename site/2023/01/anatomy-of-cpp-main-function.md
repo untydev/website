@@ -1,16 +1,15 @@
 ---
 layout: layouts/post.njk
-title: The anatomy of the main function
+title: The anatomy of the C++ main function
 date: 2023-02-21
 draft: false
-author: Dariusz Sobczyk
-description: A brief summary of the main function in C++.
-tags: [post,C++]
+tags: [post,programming,cpp]
 favourite: true
 ---
 
 In C++, `main` is a global function invoked by the implementation at the program startup. It acts as the program's 
 entry point, and most of the code you write executes in it.
+---
 
 {% note %}
 An <i>implementation of the C++ language</i> is a system of components capable of running C++ programs. It consists 

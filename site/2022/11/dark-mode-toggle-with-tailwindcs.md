@@ -1,15 +1,14 @@
 ---
 layout: layouts/post.njk
-title: Toggle dark mode with TailwindCSS
+title: How to implement a dark mode toggle with TailwindCSS
 date: 2022-11-24
 draft: false
-author: Dariusz Sobczyk
-description: How I built a toggle for dark mode on my website.
-tags: [post,TailwindCSS]
+tags: [post,programming,javascript,tailwindcss]
 favourite: true
 ---
 
 I designed the first version of my website in dark colors. I prefer dark color themes (white text on black background) when programming or casually browsing the Internet.
+---
 
 However, when reading walls of text like books or online publications, I feel more comfortable doing it in lighter color themes (black text on white background). I also regularly switch between dark and light themes in my code editor. I have no idea why I am doing it 🙂
 

@@ -1,0 +1,82 @@
+---
+layout: layouts/page.njk
+title: A few words about me
+---
+<main class="mx-auto max-w-3xl p-6">
+
+  {# About #}
+  <div>
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+
+      {# Photo #}
+      <img src="/images/photo.jpeg" alt="" class="rounded-full w-20 h-20" />
+
+      {# Description #}
+      <h1 class="font-bold text-zinc-800 dark:text-zinc-100">
+        I'm Dariusz Sobczyk. Programmer, husband, dad of <span class="text-zinc-400 dark:text-zinc-600 line-through">one</span> two, amateur builder, and a happy Alfa Romeo owner. I currently live in <span class="text-zinc-400 dark:text-zinc-600 line-through">Wrocław, Poland</span> the middle of nowhere.
+      </h1>
+    </div>
+
+    {# Story #}
+    <div class="mt-6 flex flex-col gap-6">
+      <p>
+        I've been hooked on computers since my dad brought home a Commodore 64. Back then, my favorite activities were smashing joysticks and copying code listings found in computer magazines. Later, I replaced joysticks with gamepads, computer magazines with the Internet, and BASIC with C++.
+      </p>
+
+      <p>
+        Since 2016, I've been working as an independent contractor. I'm passionate about delivering high-quality work. I love experimenting, learning, and sharing knowledge with others.
+      </p>
+
+      <p>
+        Recently, I've been focusing on network programming, particularly for online games. As part of that effort, I'm working on my most ambitious side project, which I hope to announce soon.
+      </p>
+
+      <p>
+        You can catch me on <a href="{{ social.linkedin.url }}" class="text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800 hover:bg-teal-500 px-1 -mx-1">LinkedIn</a>, <a href="{{ social.twitter.url }}" class="text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800 hover:bg-teal-500 px-1 -mx-1">X (Twitter)</a>, or <a href="{{ social.github.url }}" class="text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800 hover:bg-teal-500 px-1 -mx-1">GitHub</a> if you'd like to chat, or email me at <a href="mailto:me@dsobczyk.com" class="text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800 hover:bg-teal-500 px-1 -mx-1">me@dsobczyk.com</a> if you prefer that.
+      </p>
+    </div>
+  </div>
+
+  {# Career #}
+  <div class="mt-12 pt-12 border-t border-zinc-300 dark:border-zinc-700">
+    <ol role="list" class="space-y-6">
+      {% for job in jobs %}
+        <li class="flex gap-4">
+          <dl class="flex flex-auto flex-wrap gap-x-2">
+            <dt class="sr-only">
+              Company
+            </dt>
+            <dd class="w-full flex-none font-bold text-zinc-800 dark:text-zinc-100">
+              {{ job.company }}
+            </dd>
+            <dt class="sr-only">
+              Role
+            </dt>
+            <dd class="">
+              {{ job.role }}
+            </dd>
+            <dt class="sr-only">
+              Date
+            </dt>
+            <dd class="ml-auto">
+              <time datetime="{{ job.start }}">{{ job.start }}</time> <span aria-hidden="true">—</span> <time datetime="{{ job.end }}">{{ job.end }}</time>
+            </dd>
+            <dt class="sr-only">
+              Tech
+            </dt>
+            <dd class="w-full flex-none text-zinc-400 dark:text-zinc-500">
+              {% for tag in job.tags %}
+                #{{ tag }}
+              {% endfor %}
+            </dd>
+          </dl>
+        </li>
+      {% endfor %}
+    </ol>
+
+    {# Download CV #}
+    <a class="inline-block mt-8 p-1 -mx-1 leading-none w-full text-center font-bold text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-900 hover:bg-teal-500" href="/files/CV_DSobczyk.pdf">
+      Download CV ↓
+    </a>
+  </div>
+</main>

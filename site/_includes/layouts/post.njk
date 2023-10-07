@@ -1,37 +1,43 @@
 ---
 layout: layouts/page.njk
 ---
-<article class="max-w-3xl px-8 prose sm:prose-lg prose-gray dark:prose-invert mx-auto">
+<main class="mx-auto max-w-3xl p-6">
+  <article>
 
-  <!-- Title -->
+    {# Header #}
+    <div class="relative mx-auto max-w-3xl">
 
-  <div class="not-prose">
-    <h1 class="text-4xl sm:text-5xl text-gray-900 dark:text-gray-50 text-center leading-tight">
-      {{ title }}
-    </h1>
+      {# Back button #}
+      <a href="/blog" class="inline-block mt-8 p-1 -mx-1 leading-none text-center text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-900 hover:bg-teal-500">
+        ← All posts
+      </a>
 
-    <!-- Meta -->
+      {# Post title #}
+      <h1 class="mt-8 font-bold text-zinc-900 dark:text-zinc-100">
+        {{ title }}
+      </h1>
 
-    <p class="text-md mt-2 text-center text-gray-600 dark:text-gray-400">
-      <span>
-        {{ data.date | publishDate }} in
-      </span>
-      <span>
-        {%- for tag in data.tags or tags -%}
-          {%- if tag != "post" -%}
-            {{ tag }}
-          {%- endif -%}
-        {%- endfor -%}
-      </span>
-      <span>
-        &nbsp;·&nbsp; {{ content | readingTime }}
-      </span>
-    </p>
-  </div>
+      {# Post meta #}
+      <div class="mt-6 text-zinc-400 dark:text-zinc-500">
+        <time datetime="{{ data.date }}">
+          {{ data.date | publishDate }}
+        </time>
+        <span>|</span>
+        <span>
+          {{ content | readingTime }} minutes read
+        </span>
+        <span>|</span>
+        {% for tag in tags %}
+          {% if tag != 'post' %}
+            <span class="mr-1">#{{ tag }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
 
-  <!-- Content -->
-
-  <div class="pt-8">
-    {{ content | safe }}
-  </div>
-</article>
+    {# Content #}
+    <div class="mx-auto max-w-3xl mt-6 prose prose-zinc dark:prose-invert">
+      {{ content | safe }}
+    </div>
+  </article>
+</main>

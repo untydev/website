@@ -1,16 +1,15 @@
 ---
 layout: layouts/post.njk
-title: Write your documentation first
+title: Why writing docs first can improve your code
 date: 2023-04-03
 draft: false
-author: Dariusz Sobczyk
-description: Why documenting your code first can make it substantially better. 
-tags: [post,programming]
+tags: [post,programming,cpp]
 favourite: true
 ---
 Have you ever thought of writing documentation before jumping right into programming? My intuition tells me that 
-your answer is a bold no. Software developers are notoriously dubious about documenting their code. At the same time,
-they expect that some third-party framework they use comes with a full suite of documents to make their jobs easier.
+your answer is a bold no. Software developers are notoriously dubious about documenting their code.
+---
+At the same time, they expect that some third-party framework they use comes with a full suite of documents to make their jobs easier.
 
 Over the years, I've formed my own approach to documenting code. One of the practices I've been following
 consistently, is that I document interfaces before implementing them. I'll explain why I think it's a 

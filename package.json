@@ -1,21 +1,26 @@
 {
-  "name": "untypical",
-  "description": "The code behind the Untypical.dev website",
   "private": true,
   "license": "MIT",
   "author": "Dariusz Sobczyk",
   "scripts": {
-    "build": "ELEVENTY_PRODUCTION=true eleventy && npm run build-styles",
-    "build-styles": "NODE_ENV=production postcss site/styles/site.css -o www/site.css",
-    "start": "eleventy --serve"
+    "dev": "concurrently npm:dev:11ty npm:dev:css",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "NODE_ENV=production postcss site/styles/site.css -o www/site.css --watch",
+    "build": "npm run build:11ty",
+    "build:11ty": "ELEVENTY_PRODUCTION=true eleventy && npm run build:css",
+    "build:css": "NODE_ENV=production postcss site/styles/site.css -o www/site.css",
+    "clean": "rimraf www"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@tailwindcss/typography": "^0.5.4",
+    "concurrently": "^8.2.1",
     "dayjs": "^1.11.5",
     "html-minifier": "^4.0.0",
     "postcss-cli": "^10.0.0",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.1.8"
   }
 }

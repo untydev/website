@@ -1,13 +1,12 @@
----
-header: true
-title: Untypical - Dariusz Sobczyk's personal website.
----
 <!DOCTYPE html>
-<html lang="en" class="h-full">
-
+<html lang="en" class="h-full" x-data="{ dark: localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }" :class="{ dark: dark }">
   <head>
     <title>
-      {{ title }}
+      {% if title %}
+        {{ title }} - Dariusz Sobczyk
+      {% else %}
+        Dariusz Sobczyk's personal website
+      {% endif %}
     </title>
 
     {% if description %}
@@ -18,16 +17,13 @@ title: Untypical - Dariusz Sobczyk's personal website.
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <link rel="stylesheet" href="/site.css" />
 
-    <!-- Plausible.io analytics -->
+    {# Plausible.io analytics #}
+    <script defer data-domain="dsobczyk.com" src="https://plausible.io/js/script.js"></script>
 
-    <script defer data-domain="untypical.dev" src="https://plausible.io/js/script.js"></script>
-
-    <!-- Favicon -->
-
+    {# Favicon #}
     <link rel="icon" type="image/png" href="/images/favicon.png">
 
-    <!-- Mode switch -->
-
+    {# Set theme #}
     <script>
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
@@ -36,25 +32,27 @@ title: Untypical - Dariusz Sobczyk's personal website.
       }
     </script>
 
-    <!-- Main script -->
-
-    <script defer src="/scripts/site.js"></script>
+    {# Alpine.js #}
+    <script defer src="/scripts/alpine.js"></script>
   </head>
 
-  <body class="min-h-full bg-white dark:bg-gray-900">
+  <body class="h-full leading-7 text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-900 flex flex-col">
+    <div class="grow-0 shrink-0">
 
-    <!-- Site header -->
-
-    {% if header %}
+      {# Site header #}
       {% include 'partials/header.njk' %}
-    {% endif %}
+    </div>
 
-    <!-- Main content -->
+    <div class="grow">
 
-    <div class="py-16">
+      {# Site content #}
       {{ content | safe }}
     </div>
 
-  </body>
+    <div class="grow-0 shrink-0">
 
+      {# Site footer #}
+      {% include 'partials/footer.njk' %}
+    </div>
+  </body>
 </html>

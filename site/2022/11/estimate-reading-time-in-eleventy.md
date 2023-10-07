@@ -1,15 +1,14 @@
 ---
 layout: layouts/post.njk
-title: Estimate reading time in Eleventy
+title: How to estimate and display reading time in Eleventy
 date: 2022-11-12
 draft: false
-author: Dariusz Sobczyk
-description: How to add a reading time section to an Eleventy website.
-tags: [post,JavaScript]
+tags: [post,programming,javascript,11ty]
 ---
 On my [current website](https://untypical.dev), I wanted to show the reading time of posts next to their titles. 
 Eleventy doesn't come with a built-in feature to achieve this. There are a few unofficial plugins that I could've used,
 but instead, I took the opportunity to learn something new and wrote the code myself.
+---
 
 ## Theory
 
