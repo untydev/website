@@ -8,13 +8,13 @@
     </a>
 
     {# Menu #}
-    <div class="flex items-center gap-x-6 font-bold text-zinc-800 dark:text-zinc-100 leading-none">
-      <a href="/about" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/about/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">About</a>
-      <a href="/blog" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/blog/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">Blog</a>
-      <a href="/links" class="p-1 -mx-1 hover:bg-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800" x-data="{ active: path === '/links/' }" :class="{ 'bg-teal-500': active, 'text-zinc-100': active, 'dark:text-zinc-800': active }">Links</a>
+    <div class="flex items-center gap-x-6 font-semibold text-zinc-900 dark:text-zinc-100 leading-none">
+      <a href="/about" class="transition p-1 -mx-1 hover:bg-teal-400 hover:dark:text-zinc-900" x-data="{ active: path === '/about/' }" :class="{ 'bg-teal-400': active, 'dark:text-zinc-900': active }">About</a>
+      <a href="/blog" class="transition p-1 -mx-1 hover:bg-teal-400 hover:dark:text-zinc-900" x-data="{ active: path === '/blog/' }" :class="{ 'bg-teal-400': active, 'dark:text-zinc-900': active }">Blog</a>
+      <a href="/links" class="transition p-1 -mx-1 hover:bg-teal-400 hover:dark:text-zinc-900" x-data="{ active: path === '/links/' }" :class="{ 'bg-teal-400': active, 'dark:text-zinc-900': active }">Links</a>
 
       {# Theme switcher #}
-      <button id="themeToggleBtn" class="relative hover:text-teal-500 ml-2" x-on:click="dark = !dark; localStorage.setItem('theme', dark ? 'dark' : 'light')">
+      <button id="themeToggleBtn" class="transition relative hover:text-teal-400 ml-2" x-on:click="dark = !dark; localStorage.setItem('theme', dark ? 'dark' : 'light')">
         <span class="absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
 
           {# Sun icon #}

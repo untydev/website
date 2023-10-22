@@ -4,25 +4,21 @@ title: Writing on programming, software design, and stuff
 ---
 <main class="mx-auto max-w-3xl p-6">
 
-  {# Header #}
-  <div>
+  {# Heading #}
+  <h1 class="font-bold text-zinc-800 dark:text-zinc-100">
+    Writing on programming, software design, and stuff.
+  </h1>
 
-    {# Title #}
-    <h1 class="font-bold text-zinc-800 dark:text-zinc-100">
-      Writing on programming, software design, and stuff.
-    </h1>
+  {# Subheading #}
+  <p class="mt-6">
+    All my long-form thoughts and tutorials, organized chronologically.
+  </p>
 
-    {# Subtitle #}
-    <p class="mt-6">
-      All my long-form thoughts and tutorials, organized chronologically.
-    </p>
-
-    {# Links #}
-    <div class="mt-6 flex gap-x-6">
-      <a href="/feed.xml" class="text-teal-500 hover:text-zinc-100 hover:dark:text-zinc-800 hover:bg-teal-500 px-1 -mx-1">
-        Subscribe
-      </a>
-    </div>
+  {# Links #}
+  <div class="mt-6 flex gap-x-6">
+    <a href="/feed.xml" class="px-1 -mx-1 transition underline decoration-teal-400 decoration-2 underline-offset-2 hover:bg-teal-400 hover:text-zinc-900">
+      Subscribe
+    </a>
   </div>
 
   {# Posts list #}
@@ -33,7 +29,7 @@ title: Writing on programming, software design, and stuff
         {# Title #}
         <h1 class="font-bold flex flex-row items-start">
           <span class="mr-2">→</span>
-          <a href="{{ post.url }}" class="text-zinc-800 dark:text-zinc-200 hover:text-teal-500 hover:dark:text-teal-500">
+          <a href="{{ post.url }}" class="transition px-1 -mx-1 text-zinc-900 dark:text-zinc-100 hover:bg-teal-400 hover:text-zinc-900 hover:dark:text-zinc-900">
             {{ post.data.title }}
           </a>
         </h1>

@@ -36,22 +36,19 @@
     <script defer src="/scripts/alpine.js"></script>
   </head>
 
-  <body class="h-full leading-7 text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-900 flex flex-col">
+  <body class="h-full flex flex-col bg-zinc-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 leading-7">
+    {# Site header #}
     <div class="grow-0 shrink-0">
-
-      {# Site header #}
       {% include 'partials/header.njk' %}
     </div>
 
+    {# Site content #}
     <div class="grow">
-
-      {# Site content #}
       {{ content | safe }}
     </div>
 
+    {# Site footer #}
     <div class="grow-0 shrink-0">
-
-      {# Site footer #}
       {% include 'partials/footer.njk' %}
     </div>
   </body>
