@@ -11,11 +11,11 @@ title: Writing on programming, software design, and stuff
 
   {# Subheading #}
   <p class="mt-6">
-    All my long-form thoughts and tutorials, organized chronologically.
+    Here are all my long-form thoughts, organized chronologically. For more bite-sized content, follow me on <a href="{{ social.linkedin.url }}" class="px-1 -mx-1 transition underline decoration-teal-400 decoration-2 underline-offset-2 hover:bg-teal-400 hover:text-zinc-900">LinkedIn</a> and <a href="{{ social.twitter.url }}" class="px-1 -mx-1 transition underline decoration-teal-400 decoration-2 underline-offset-2 hover:bg-teal-400 hover:text-zinc-900">X/Twitter</a>.
   </p>
 
   {# Links #}
-  <div class="mt-6 flex gap-x-6">
+  <div class="mt-6 flex gap-x-8">
     <a href="/feed.xml" class="px-1 -mx-1 transition underline decoration-teal-400 decoration-2 underline-offset-2 hover:bg-teal-400 hover:text-zinc-900">
       Subscribe
     </a>
@@ -28,10 +28,17 @@ title: Writing on programming, software design, and stuff
 
         {# Title #}
         <h1 class="font-bold flex flex-row items-start">
-          <span class="mr-2">→</span>
+          <span class="mr-2">
+            →
+          </span>
           <a href="{{ post.url }}" class="transition px-1 -mx-1 text-zinc-900 dark:text-zinc-100 hover:bg-teal-400 hover:text-zinc-900 hover:dark:text-zinc-900">
             {{ post.data.title }}
           </a>
+          {% if post.data.favourite %}
+            <span class="ml-2 text-pink-500">
+              ★
+            </span>
+          {% endif %}
         </h1>
 
         {# Meta #}
