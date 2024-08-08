@@ -1,0 +1,56 @@
+<x-data>
+  {
+    title: 'Writing on programming, software design, and stuff - Dariusz Sobczyk'
+  }
+</x-data>
+
+<x-layout as="div" src="page" class="window">
+
+  <!-- Back button-->
+  <a href="/" class="button is-neutral">← Return</a>
+
+  <!-- Content -->
+  <x-markdown as="div" class="block content content-has-link-primary">
+    # Writing on programming, software design, and stuff.
+
+    Here are all my long-form thoughts, organized chronologically. For more bite-sized content, follow me on <a href="{{site.social.linkedin.url}}" class="link">LinkedIn</a> and <a href="{{site.social.twitter.url}}" class="link">X/Twitter</a>.
+  </x-markdown>
+
+  <!-- Posts list -->
+  <x-each loop="post in site.posts">
+
+    <!-- Post item -->
+    <ul>
+      <li class="block">
+        <article>
+
+          <!-- Title -->
+          <h2 class="heading">
+            <span>→</span>
+            <a href="{{ post.url }}" class="link link-neutral">{{ post.data.title }}</a>
+            <x-if condition="post.data.favorite">
+              <span class="has-text-secondary">★</span>
+            </x-if>
+          </h2>
+
+          <!-- Meta -->
+          <div class="ml-2 has-text-dim">
+            <time datetime="{{ post.date }}">
+              <x-format type="date" format="MMM DD, YYYY">
+                {{ post.date }}
+              </x-format>
+            </time>
+            <span>|</span>
+            <span>
+              <readtime src="{{ post.path }}"></readtime> minutes read
+            </span>
+            <span>|</span>
+            <x-each loop="tag in post.data.tags">
+              <span>#{{ tag }}</span>
+            </x-each>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </x-each>
+</x-layout>

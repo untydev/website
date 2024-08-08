@@ -1,0 +1,19 @@
+<x-data>
+  {
+    title: 'HTTP/1.1 404 Not Found',
+    description: 'It looks like the page you\'re looking for doesn\'t exist.'
+  }
+</x-data>
+
+<x-layout src="page" as="div" class="window">
+
+  <!-- Back button-->
+  <a href="/" class="button is-neutral">← Return</a>
+
+  <!-- Message -->
+  <x-markdown as="div" class="content content-has-link-primary">
+    # HTTP/1.1 404 Not Found
+
+    It looks like the page you're looking for doesn't exist.
+  </x-markdown>
+</x-layout>

@@ -1,0 +1,33 @@
+<div class="block">
+  <x-each loop="post in site.posts">
+
+    <!-- Post item -->
+    <article class="block">
+
+      <!-- Title -->
+      <h3 class="heading">
+        <a href="{{ post.url }}" class="link link-neutral">{{ post.data.title }}</a>
+        <x-if condition="post.data.favorite">
+          <span class="has-text-secondary">★</span>
+        </x-if>
+      </h3>
+
+      <!-- Meta -->
+      <div class="ml-3 has-text-dim">
+        <time datetime="{{ post.date }}">
+          <x-format type="date" format="MMM DD, YYYY">
+            {{ post.date }}
+          </x-format>
+        </time>
+        <span>|</span>
+        <span>
+            <readtime src="{{ post.path }}"></readtime> minutes read
+          </span>
+        <span>|</span>
+        <x-each loop="tag in post.data.tags">
+          <span>#{{ tag }}</span>
+        </x-each>
+      </div>
+    </article>
+  </x-each>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ page.language }}" x-data="{ usesDarkMode: prefersDarkMode() }" :class="{ dark: usesDarkMode }">
+
+  <!-- Head -->
+  <head>
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Plausible.io analytics -->
+    <script defer data-domain="unty.dev" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Stylesheet -->
+    <link href="/styles/index.css" rel="stylesheet" type="text/css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <!-- Custom logic -->
+    <script>
+      window.switchDarkMode = function () {
+        const useDarkMode = !prefersDarkMode()
+        localStorage.setItem('prefersDarkMode', useDarkMode ? 'yes' : 'no')
+        return !!useDarkMode
+      }
+
+      window.prefersDarkMode = function () {
+        const { prefersDarkMode } = localStorage
+        return prefersDarkMode === 'yes' || !prefersDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches
+      }
+
+      if (prefersDarkMode()) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="/scripts/alpine.js"></script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <div class="screen">
+      <header class="header">
+        <x-include src="header"></x-include>
+      </header>
+
+      <main class="main">
+        <x-content></x-content>
+      </main>
+
+      <footer class="footer">
+        <x-include src="footer"></x-include>
+      </footer>
+    </div>
+  </body>
+</html>

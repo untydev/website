@@ -4,5 +4,8 @@
 # NPM modules
 node_modules
 
+# Whisk
+.whisk
+
 # Site build
-www
+dist

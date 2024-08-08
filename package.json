@@ -1,26 +1,18 @@
 {
   "private": true,
   "license": "MIT",
-  "author": "Dariusz Sobczyk",
+  "author": "Dariusz Sobczyk <npm@unty.dev>",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently npm:dev:11ty npm:dev:css",
-    "dev:11ty": "eleventy --serve",
-    "dev:css": "NODE_ENV=production postcss site/styles/site.css -o www/site.css --watch",
-    "build": "npm run build:11ty",
-    "build:11ty": "ELEVENTY_PRODUCTION=true eleventy && npm run build:css",
-    "build:css": "NODE_ENV=production postcss site/styles/site.css -o www/site.css",
-    "clean": "rimraf www"
+    "dev": "whisk develop",
+    "gen": "whisk generate",
+    "clean": "whisk clean"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@tailwindcss/typography": "^0.5.4",
-    "concurrently": "^8.2.1",
-    "dayjs": "^1.11.5",
-    "html-minifier": "^4.0.0",
-    "postcss-cli": "^10.0.0",
-    "rimraf": "^5.0.5",
-    "tailwindcss": "^3.1.8"
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.5",
+    "postcss": "^8.4.40",
+    "postcss-import": "^16.1.0",
+    "prismjs": "^1.29.0"
   }
 }

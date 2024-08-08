@@ -1,0 +1,33 @@
+<x-data>
+  {
+    title: 'Dariusz Sobczyk\'s website',
+    description: 'I\'m Dariusz, a lifelong programmer, game developer, and indie maker. This is my website.'
+  }
+</x-data>
+
+<x-layout src="page" as="div" class="window">
+  <!-- Welcome message -->
+  <x-markdown as="div" class="card content content-has-link-primary">
+    # 👋🏻 Hey there!
+
+    I'm Dariusz, a lifelong programmer and indie maker.
+
+    [LINKEDIN]({{site.social.linkedin.url}})&nbsp;&nbsp;[X/TWITTER]({{site.social.twitter.url}})&nbsp;&nbsp;[GITHUB]({{site.social.github.url}})
+  </x-markdown>
+
+  <!-- Favorite items -->
+  <x-markdown as="div" class="card content content-has-link-primary">
+    ## ⭐ Favorites
+
+    * 🚀️ [SpaceTwo.dev](https://spacetwo.dev) - Online code editor and compiler
+    * 📜 [Why writing docs first can improve your code](/2023/04/docs-first-to-improve-your-code/)
+    * 📚 [My all-time favorite books and articles](/favs/)
+  </x-markdown>
+
+  <!-- Contact section -->
+  <x-markdown as="div" class="card content content-has-link-primary">
+    ## 📫 Get in touch
+
+    Got questions or want to say hi? Email me at <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>.
+  </x-markdown>
+</x-layout>

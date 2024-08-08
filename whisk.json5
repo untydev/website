@@ -1,0 +1,16 @@
+{
+  name: 'untydev',
+  plugins: [
+    'readtime',
+    'sidenote',
+    'content',
+    'highlight',
+    'postcss',
+  ],
+  copy: [
+    'files',
+    'fonts',
+    'images',
+    'scripts'
+  ]
+}

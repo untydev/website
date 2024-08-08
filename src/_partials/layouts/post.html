@@ -1,0 +1,39 @@
+<x-layout src="page" as="article" class="window">
+
+  <!-- Back button-->
+  <a href="/blog/" class="button is-neutral">← Return</a>
+
+  <!-- Post title -->
+  <h1 class="heading">
+    {{ page.title }}
+    <x-if condition="page.favorite">
+      <span class="mr-1 has-text-secondary">★</span>
+    </x-if>
+  </h1>
+
+  <!-- Post meta -->
+  <div class="block has-text-dim">
+    <time datetime="{{ page.date }}">
+      <x-format type="date" format="MMM DD, YYYY">
+        {{ page.date }}
+      </x-format>
+    </time>
+    <span>|</span>
+    <span>
+      <readtime src="{{ page.path }}"></readtime> minutes read
+    </span>
+    <span>|</span>
+    <x-each loop="tag in page.tags">
+      <span>&nbsp;#{{ tag }}</span>
+    </x-each>
+  </div>
+
+  <div class="block has-text-dim">
+    <span aria-hidden="true">--</span>
+  </div>
+
+  <!-- Post content -->
+  <div class="content">
+    <x-content></x-content>
+  </div>
+</x-layout>
